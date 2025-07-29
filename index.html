@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharmalingam Devanand | Business & IT Executive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #0ea5e9, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card {
+            background-color: white;
+            border: 1px solid #e2e8f0; /* slate-200 */
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -39px; /* Adjusted for card padding */
+            top: 5px;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #38bdf8;
+            border: 3px solid #f8fafc; /* slate-50 */
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .gallery-item img {
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-slate-900">T. Devanand</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-slate-600 hover:text-sky-500 transition">About</a>
+                <a href="#expertise" class="text-slate-600 hover:text-sky-500 transition">Expertise</a>
+                <a href="#gallery" class="text-slate-600 hover:text-sky-500 transition">Gallery</a>
+                <a href="#experience" class="text-slate-600 hover:text-sky-500 transition">Experience</a>
+                <a href="#contact" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-slate-800">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-white/95">
+             <a href="#about" class="block py-2 text-slate-600 hover:text-sky-500">About</a>
+            <a href="#expertise" class="block py-2 text-slate-600 hover:text-sky-500">Expertise</a>
+            <a href="#gallery" class="block py-2 text-slate-600 hover:text-sky-500">Gallery</a>
+            <a href="#experience" class="block py-2 text-slate-600 hover:text-sky-500">Experience</a>
+            <a href="#contact" class="block mt-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg text-center">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home">
+            <div class="relative h-80 md:h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2070&q=80');">
+                 <div class="absolute inset-0 bg-black/50"></div>
+                 <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+                     <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                        Tharmalingam Devanand
+                    </h1>
+                    <p class="mt-4 text-2xl md:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-indigo-300">
+                        Visionary Entrepreneur & Seasoned Business/IT Executive
+                    </p>
+                    <p class="mt-6 max-w-3xl text-slate-200 text-lg">
+                        Over 30 years of expertise in fintech, data strategy, and scaling multi-million-dollar businesses from inception to significant growth milestones.
+                    </p>
+                 </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-28">
+             <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-900" data-aos="fade-up">About Me</h2>
+                <div class="mt-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                    <div class="md:col-span-1" data-aos="fade-right">
+                         <img src="https://placehold.co/600x800/e2e8f0/334155?text=Client+Image" alt="Tharmalingam Devanand" class="rounded-2xl shadow-xl w-full h-auto">
+                    </div>
+                    <div class="md:col-span-2" data-aos="fade-left">
+                        <p class="text-lg md:text-xl text-slate-700 leading-relaxed">
+                            I am a visionary entrepreneur and seasoned Business & IT Executive with a diverse background spanning over three decades. My expertise lies in building and scaling multi-million-dollar businesses from the ground up. As a player-coach, I inspire cross-functional teams to achieve exceptional results. My comprehensive background covers business management, engineering, product development, sales, marketing, and corporate strategy, allowing me to consistently turn challenges into growth opportunities with a "Never Say Die" mindset.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-20 max-w-4xl mx-auto" data-aos="fade-up">
+                    <div class="card p-8 md:p-10">
+                        <h3 class="text-2xl font-bold text-center text-slate-800 mb-6">Professional Competencies</h3>
+                         <p class="text-center text-slate-600 mb-8">With over three decades of excellence and more than 20 years in consulting at Fortune 500 companies, my competencies are rooted in strategic foresight and operational acumen.</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div data-aos="fade-up" data-aos-delay="100">
+                                <h4 class="font-bold text-xl text-sky-600 flex items-center gap-3"><i data-lucide="compass"></i> Strategy Development</h4>
+                                <p class="mt-2 text-slate-600">Leveraging global exposure and a robust technical foundation to offer a unique entrepreneurial perspective on key business drivers, organizational transformation, and emerging IT trends.</p>
+                            </div>
+                             <div data-aos="fade-up" data-aos-delay="200">
+                                <h4 class="font-bold text-xl text-sky-600 flex items-center gap-3"><i data-lucide="users"></i> Communication & Leadership</h4>
+                                <p class="mt-2 text-slate-600">Established history of cultivating strong, trust-based relationships with C-level executives and diverse teams. Renowned as a trusted advisor, effective communicator, and inspirational leader.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="bg-white py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-900" data-aos="fade-up">Domain Expertise</h2>
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card p-6 text-center border-transparent hover:border-sky-500" data-aos="fade-up" data-aos-delay="100">
+                        <i data-lucide="layers" class="mx-auto w-12 h-12 text-sky-500"></i>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-800">Fintech & Payments</h3>
+                        <p class="mt-2 text-slate-600">In-depth knowledge of use cases, solutions, platform development and integration.</p>
+                    </div>
+                    <div class="card p-6 text-center border-transparent hover:border-sky-500" data-aos="fade-up" data-aos-delay="200">
+                        <i data-lucide="database" class="mx-auto w-12 h-12 text-sky-500"></i>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-800">Data Strategy</h3>
+                        <p class="mt-2 text-slate-600">Expertise in data monetization, analytics, and turning insights into business value.</p>
+                    </div>
+                    <div class="card p-6 text-center border-transparent hover:border-sky-500" data-aos="fade-up" data-aos-delay="300">
+                        <i data-lucide="cloud" class="mx-auto w-12 h-12 text-sky-500"></i>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-800">Cloud & Infrastructure</h3>
+                        <p class="mt-2 text-slate-600">Proficient in cloud technologies, application development, and infrastructure management.</p>
+                    </div>
+                    <div class="card p-6 text-center border-transparent hover:border-sky-500" data-aos="fade-up" data-aos-delay="400">
+                        <i data-lucide="briefcase" class="mx-auto w-12 h-12 text-sky-500"></i>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-800">Business Development</h3>
+                        <p class="mt-2 text-slate-600">Proven track record in strategic alliances, go-to-market planning, and competitive analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Banner 1 -->
+        <section class="h-72 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2070&q=80');" data-aos="fade">
+            <div class="h-full w-full bg-black/40"></div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-900" data-aos="fade-up">Gallery</h2>
+                 <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </div>
+                     <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1587560699334-bea93391dcc4?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </div>
+                     <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+                        <img src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="700">
+                        <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="bg-white py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-900" data-aos="fade-up">Professional Experience</h2>
+                <div class="mt-16 max-w-3xl mx-auto">
+                    <div class="relative border-l-2 border-slate-200 space-y-12">
+                         <div class="pl-10 relative" data-aos="fade-up">
+                            <div class="card p-6 relative">
+                               <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">October 2023 – Present</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Regional Director - APAC</h3>
+                                <p class="text-md text-slate-800">ATDXT Dubai</p>
+                            </div>
+                        </div>
+                        <div class="pl-10 relative" data-aos="fade-up">
+                            <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">August 2014 – September 2023</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Sales Director – Emerging Markets</h3>
+                                <p class="text-md text-slate-800">Whiteklay Pte, Singapore</p>
+                            </div>
+                        </div>
+                         <div class="pl-10 relative" data-aos="fade-up">
+                             <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">September 2012 – July 2014</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Location Head – Sri Lanka & Maldives</h3>
+                                <p class="text-md text-slate-800">Ingram Micro</p>
+                            </div>
+                        </div>
+                         <div class="pl-10 relative" data-aos="fade-up">
+                             <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">September 2010 – September 2012</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Regional Manager – Sri Lanka & Maldives</h3>
+                                <p class="text-md text-slate-800">Avaya</p>
+                            </div>
+                        </div>
+                        <div class="pl-10 relative" data-aos="fade-up">
+                             <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">January 2009 – September 2010</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Private Consultant</h3>
+                                <p class="text-md text-slate-800">Independent Consulting</p>
+                            </div>
+                        </div>
+                        <div class="pl-10 relative" data-aos="fade-up">
+                             <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">May 2006 – December 2008</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Business Manager – Sri Lanka & Maldives</h3>
+                                <p class="text-md text-slate-800">EMC Inc.</p>
+                            </div>
+                        </div>
+                         <div class="pl-10 relative" data-aos="fade-up">
+                             <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">March 2002 – May 2006</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Business Development Manager – Sri Lanka & Maldives</h3>
+                                <p class="text-md text-slate-800">Cisco Systems Inc.</p>
+                            </div>
+                        </div>
+                        <div class="pl-10 relative" data-aos="fade-up">
+                             <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">January 1999 – March 2002</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Manager – SI Division</h3>
+                                <p class="text-md text-slate-800">EAP Technologies (Pvt) Ltd.</p>
+                            </div>
+                        </div>
+                        <div class="pl-10 relative" data-aos="fade-up">
+                             <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">August 1997 – January 1999</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Account Manager</h3>
+                                <p class="text-md text-slate-800">Bartleet Electronics Ltd.</p>
+                            </div>
+                        </div>
+                         <div class="pl-10 relative" data-aos="fade-up">
+                             <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">September 1995 – July 1997</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Assistant Sales Manager</h3>
+                                <p class="text-md text-slate-800">Digitek (Pvt) Ltd.</p>
+                            </div>
+                        </div>
+                        <div class="pl-10 relative" data-aos="fade-up">
+                             <div class="card p-6 relative">
+                                <div class="timeline-item"></div>
+                                <p class="text-sky-500 font-semibold">October 1992 – September 1995</p>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Senior Workshop Engineer</h3>
+                                <p class="text-md text-slate-800">Robo Tech (Pvt) Ltd.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Banner 2 -->
+        <section class="h-72 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2070&q=80');" data-aos="fade">
+            <div class="h-full w-full bg-black/40"></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-28">
+            <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Get In Touch</h2>
+                <p class="mt-4 max-w-xl mx-auto text-slate-600">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                </p>
+                <div class="mt-8">
+                    <a href="mailto:devat3105@gmail.com" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-lg transition duration-300 text-lg">
+                        devat3105@gmail.com
+                    </a>
+                </div>
+                <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-6 text-slate-700">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="phone"></i>
+                        <span>+94 714307858</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                         <i data-lucide="linkedin"></i>
+                         <a href="#" class="hover:text-sky-500">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200">
+        <div class="container mx-auto px-6 py-6 text-center text-slate-500">
+            <p>&copy; <span id="year"></span> Tharmalingam Devanand. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+    </script>
+</body>
+</html>
