@@ -74,18 +74,18 @@
             box-shadow: 0 0 10px #0ea5e9;
         }
         
-        .blog-item {
+        .blog-item, .gallery-item {
             overflow: hidden;
             border-radius: 0.75rem;
             transition: transform 0.4s ease;
         }
-        .blog-item:hover {
+        .blog-item:hover, .gallery-item:hover {
             transform: translateY(-5px);
         }
-        .blog-item img {
+        .blog-item img, .gallery-item img {
             transition: transform 0.4s ease;
         }
-         .blog-item:hover img {
+         .blog-item:hover img, .gallery-item:hover img {
             transform: scale(1.05);
         }
 
@@ -108,6 +108,30 @@
             z-index: 0;
             transition: opacity 0.5s;
         }
+
+        /* Modal styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding: 1rem;
+        }
+        .modal-content {
+            max-width: 48rem;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -118,9 +142,10 @@
             <a href="#" class="text-xl font-bold text-white tracking-wider">T. DEVANAND</a>
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#about" class="text-slate-300 hover:text-sky-400 transition">About</a>
-                <a href="#services" class="text-slate-300 hover:text-sky-400 transition">Services</a>
-                <a href="#testimonials" class="text-slate-300 hover:text-sky-400 transition">Testimonials</a>
+                <a href="#expertise" class="text-slate-300 hover:text-sky-400 transition">Expertise</a>
+                <a href="#testimonials" class="text-slate-300 hover:text-sky-400 transition">Commendation</a>
                 <a href="#blog" class="text-slate-300 hover:text-sky-400 transition">Blog</a>
+                <a href="#gallery" class="text-slate-300 hover:text-sky-400 transition">Gallery</a>
                 <a href="#experience" class="text-slate-300 hover:text-sky-400 transition">Experience</a>
                 <a href="#contact" class="bg-sky-500 hover:bg-sky-400 text-white font-semibold px-4 py-2 rounded-lg transition glow-button">Contact</a>
             </div>
@@ -131,9 +156,10 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-slate-950/95">
              <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">About</a>
-             <a href="#services" class="block py-2 text-slate-300 hover:text-sky-400">Services</a>
-             <a href="#testimonials" class="block py-2 text-slate-300 hover:text-sky-400">Testimonials</a>
+             <a href="#expertise" class="block py-2 text-slate-300 hover:text-sky-400">Expertise</a>
+             <a href="#testimonials" class="block py-2 text-slate-300 hover:text-sky-400">Commendation</a>
              <a href="#blog" class="block py-2 text-slate-300 hover:text-sky-400">Blog</a>
+             <a href="#gallery" class="block py-2 text-slate-300 hover:text-sky-400">Gallery</a>
             <a href="#experience" class="block py-2 text-slate-300 hover:text-sky-400">Experience</a>
             <a href="#contact" class="block mt-2 bg-sky-500 hover:bg-sky-400 text-white font-semibold px-4 py-2 rounded-lg text-center glow-button">Contact</a>
         </div>
@@ -149,10 +175,7 @@
                         Tharmalingam Devanand
                     </h1>
                     <p class="mt-4 text-2xl md:text-3xl font-medium gradient-text">
-                        Pioneering Business & AI-Driven Transformation
-                    </p>
-                    <p class="mt-6 max-w-3xl mx-auto text-slate-300 text-lg">
-                        Leveraging 30+ years of executive leadership to architect the future of fintech, data strategy, and enterprise growth.
+                        "Harnessing over three decades of executive leadership to drive innovative business transformation, turning challenges into opportunities."
                     </p>
                  </div>
             </div>
@@ -168,37 +191,49 @@
                     </div>
                     <div class="md:col-span-2" data-aos="fade-left">
                         <p class="text-lg md:text-xl text-slate-300 leading-relaxed">
-                            I am a visionary entrepreneur and seasoned Business & IT Executive with a diverse background spanning over three decades. My expertise lies in building and scaling multi-million-dollar businesses from the ground up. As a player-coach, I inspire cross-functional teams to achieve exceptional results. My comprehensive background covers business management, engineering, product development, sales, marketing, and corporate strategy, allowing me to consistently turn challenges into growth opportunities with a "Never Say Die" mindset.
+                            With over three decades of diverse experience, I excel as an innovative entrepreneur and seasoned leader in business and transformation. I have a proven track record of building and scaling multimillion-dollar enterprises from inception, consistently demonstrating the ability to drive significant growth and profitability. As a player-coach, I empower cross-functional teams to achieve outstanding results by fostering a collaborative environment and providing strategic guidance. My expertise spans various critical areas, including comprehensive business transformation and management, sophisticated data strategy and monetization techniques, cutting-edge fintech applications in payments and solutions, and robust corporate strategy development. This comprehensive background allows me to adeptly identify challenges and transform them into opportunities for sustainable growth through a resilient, "never say die" approach.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="py-20 md:py-28 bg-slate-950/50">
+        <!-- Expertise Section -->
+        <section id="expertise" class="py-20 md:py-28 bg-slate-950/50">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">What I Offer</h2>
-                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                        <i data-lucide="dollar-sign" class="mx-auto w-12 h-12 text-sky-400"></i>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Fintech & Payment Solutions</h3>
-                        <p class="mt-2 text-slate-400">Developing and implementing payment platforms and fintech use cases to drive revenue.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Expertise</h2>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Banking & Fintech -->
+                    <div class="glass-card p-8 cursor-pointer" data-aos="fade-up" onclick="openModal('fintech')">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="banknote" class="w-12 h-12 text-sky-400"></i>
+                            <h3 class="text-2xl font-bold gradient-text">Banking, Fintech, and Payment Solutions</h3>
+                        </div>
+                        <p class="text-slate-300">Tailored advisory services to navigate digital financial ecosystems, innovate, and achieve sustainable growth.</p>
                     </div>
-                    <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="200">
-                        <i data-lucide="bar-chart-2" class="mx-auto w-12 h-12 text-sky-400"></i>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Data Strategy & Monetization</h3>
-                        <p class="mt-2 text-slate-400">Creating value from data assets through innovative strategies and analytics.</p>
+                    <!-- Data Strategy -->
+                    <div class="glass-card p-8 cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="openModal('data')">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="database-zap" class="w-12 h-12 text-sky-400"></i>
+                            <h3 class="text-2xl font-bold gradient-text">Data Strategy & Monetization</h3>
+                        </div>
+                        <p class="text-slate-300">Transforming data into a strategic asset for competitive advantage and new revenue streams.</p>
                     </div>
-                    <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="300">
-                        <i data-lucide="trending-up" class="mx-auto w-12 h-12 text-sky-400"></i>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Business & Digital Transformation</h3>
-                        <p class="mt-2 text-slate-400">Advising on organizational transformation and alignment with emerging IT trends.</p>
+                    <!-- Business Transformation -->
+                    <div class="glass-card p-8 cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="openModal('transformation')">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="replace" class="w-12 h-12 text-sky-400"></i>
+                            <h3 class="text-2xl font-bold gradient-text">Business and Digital Transformation</h3>
+                        </div>
+                        <p class="text-slate-300">Integrating technology with strategic insights to foster agility, innovation, and resilience.</p>
                     </div>
-                    <div class="glass-card p-8 text-center" data-aos="fade-up" data-aos-delay="400">
-                        <i data-lucide="target" class="mx-auto w-12 h-12 text-sky-400"></i>
-                        <h3 class="mt-4 text-xl font-semibold text-white">Go-to-Market Strategy</h3>
-                        <p class="mt-2 text-slate-400">Formulating and executing strategies for market penetration and competitive advantage.</p>
+                    <!-- Motivational Speeches -->
+                    <div class="glass-card p-8 cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="openModal('motivation')">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="zap" class="w-12 h-12 text-sky-400"></i>
+                            <h3 class="text-2xl font-bold gradient-text">Motivational Speeches</h3>
+                        </div>
+                        <p class="text-slate-300">Igniting passion and fostering resilience to drive actionable change with a "never say die" mindset.</p>
                     </div>
                 </div>
             </div>
@@ -207,7 +242,7 @@
         <!-- Testimonials Section -->
         <section id="testimonials" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">What People Are Saying</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Commendations</h2>
                 <div class="mt-16 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="glass-card p-8" data-aos="fade-up">
                         <i data-lucide="quote" class="w-10 h-10 text-sky-700"></i>
@@ -274,10 +309,31 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery" class="bg-slate-950/50 py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Gallery</h2>
+                 <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <a href="#" class="gallery-item glass-card p-0 block" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </a>
+                     <a href="#" class="gallery-item glass-card p-0 block" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </a>
+                    <a href="#" class="gallery-item glass-card p-0 block" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </a>
+                    <a href="#" class="gallery-item glass-card p-0 block" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1587560699334-bea93391dcc4?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    </a>
+                </div>
+            </div>
+        </section>
 
 
         <!-- Experience Section -->
-        <section id="experience" class="bg-slate-950/50 py-20 md:py-28">
+        <section id="experience" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Professional Experience</h2>
                 <div class="mt-16 max-w-3xl mx-auto">
@@ -312,7 +368,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-28">
+        <section id="contact" class="bg-slate-950/50 py-20 md:py-28">
             <div class="container mx-auto px-6 text-center" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Get In Touch</h2>
                 <p class="mt-4 max-w-xl mx-auto text-slate-300">
@@ -338,6 +394,17 @@
 
     </main>
     
+    <!-- Modal -->
+    <div id="expertise-modal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content glass-card p-8 md:p-12" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <h2 id="modal-title" class="text-3xl font-bold gradient-text mb-6"></h2>
+            <div id="modal-body" class="text-slate-300 space-y-4"></div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-slate-950 border-t border-sky-500/10">
         <div class="container mx-auto px-6 py-6 text-center text-slate-400">
@@ -360,24 +427,7 @@
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let mouse = { x: null, y: null };
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        canvas.addEventListener('mousemove', (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
-        canvas.addEventListener('mouseleave', () => {
-            mouse.x = null;
-            mouse.y = null;
-        });
-
+        
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
@@ -408,8 +458,13 @@
                 particles.push(new Particle());
             }
         }
-        initParticles();
 
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        }
+        
         function connectParticles() {
             let opacityValue = 1;
             for (let a = 0; a < particles.length; a++) {
@@ -440,6 +495,9 @@
             connectParticles();
             requestAnimationFrame(animate);
         }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
         animate();
 
 
@@ -468,6 +526,77 @@
             once: true,
             offset: 50,
         });
+
+        // Modal Functionality
+        const modal = document.getElementById('expertise-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+
+        const expertiseData = {
+            fintech: {
+                title: 'Banking, Fintech, and Payment Solutions',
+                content: `
+                    <p class="mb-6 text-slate-300">As a specialized consultant in the banking, fintech, and payment solutions sector, I offer tailored advisory services designed to navigate the complexities of digital financial ecosystems. Drawing from over three decades of executive leadership, my consultations empower organizations to innovate, optimize operations, and achieve sustainable growth in a rapidly evolving landscape.</p>
+                    <h4 class="text-xl font-bold text-white mb-4">Key Expertise Areas:</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Strategic Advisory for Banking Transformation:</strong> Guiding banks in transitioning from traditional models to digital-first operations, including the integration of AI-driven customer experiences, cloud-based infrastructure, and regulatory compliance frameworks like PSD2 or open banking standards.</div></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Fintech Innovation and Product Development:</strong> Assisting emerging fintech companies in ideation, prototyping, and scaling innovative products, from block chain-based lending platforms to robo-advisory services, with a focus on market fit and investor readiness.</div></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Payment Solutions and Monetization Strategies:</strong> Consulting on the architecture of secure, scalable payment systems, including real-time payments, cross-border transactions, and contactless solutions using NFC or QR codes.</div></li>
+                    </ul>
+                `
+            },
+            data: {
+                title: 'Data Strategy & Monetization',
+                content: `
+                    <p class="mb-6 text-slate-300">As an experienced Business & IT Executive, I help multi-million dollar enterprises transform data into a strategic asset. My consultations enable organizations to use data for competitive advantage, from building strong frameworks to creating new revenue streams, all while ensuring compliance with regulations like GDPR and CCPA.</p>
+                    <h4 class="text-xl font-bold text-white mb-4">Key Expertise Areas:</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Data Strategy Development and Alignment:</strong> I design comprehensive data strategies that align with your business goals. This involves assessing current data maturity, identifying gaps, and outlining phased plans to integrate data across silos for unified decision-making.</div></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Advanced Analytics and Insights Generation:</strong> I guide the deployment of AI-driven models for forecasting trends, analyzing customer behavior, and optimizing operations.</div></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Data Monetization Strategies and Execution:</strong> I identify and implement data monetization approaches such as Data-as-a-Service (DaaS), subscription-based insights, or data sharing partnerships.</div></li>
+                    </ul>
+                `
+            },
+            transformation: {
+                title: 'Business and Digital Transformation',
+                content: `
+                    <p class="mb-6 text-slate-300">I offer specialized consultations in business and digital transformation. With over 30 years of experience scaling multimillion-dollar enterprises, my services help organizations navigate significant change by integrating technology with strategic business insights. I aim to foster agility, innovation, and resilience, turning disruption into a competitive advantage.</p>
+                    <h4 class="text-xl font-bold text-white mb-4">Key Expertise Areas:</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Holistic Transformation Roadmapping:</strong> I create custom strategies that assess current operations, identify transformation priorities, and develop phased plans for organizational restructuring.</div></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Digital Transformation Implementation:</strong> I guide the selection and deployment of digital tools like ERP, CRM, and IoT solutions, focusing on seamless integration to enhance processes.</div></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Innovation and Growth Acceleration:</strong> I facilitate collaborative ecosystems, such as API economies or startup partnerships, to expand market reach and co-create value through open innovation.</div></li>
+                    </ul>
+                `
+            },
+            motivation: {
+                title: 'Motivational Speeches',
+                content: `
+                    <p class="mb-6 text-slate-300">I offer dynamic consultations and motivational speeches, drawing from over thirty years of experience in business and IT, leading transformative initiatives, and scaling multimillion-dollar businesses. My goal is to ignite passion, foster resilience, and drive actionable change, using real-world experiences to inspire a "never say die" mindset.</p>
+                    <h4 class="text-xl font-bold text-white mb-4">Core Services:</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Customized Motivational Speech Development and Delivery:</strong> I develop and present engaging keynotes on topics such as "Turning Obstacles into Opportunities," "The Power of Resilient Leadership in Digital Disruption," or "Building High-Performance Teams in Uncertain Times."</div></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Leadership and Team Inspiration Programs:</strong> I embed motivational content into one-on-one or group coaching for leaders, focusing on building a player-coach mentality and enhancing emotional intelligence.</div></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Content Creation and Amplification for Broader Reach:</strong> I adapt speeches into podcasts, video series, or social media clips for ongoing motivation, leveraging platforms like LinkedIn or YouTube to expand reach.</div></li>
+                    </ul>
+                `
+            }
+        };
+
+        function openModal(expertiseKey) {
+            const data = expertiseData[expertiseKey];
+            if (data) {
+                modalTitle.textContent = data.title;
+                modalBody.innerHTML = data.content;
+                modal.style.display = 'flex';
+                lucide.createIcons(); // Re-initialize icons inside the modal
+            }
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
     </script>
 </body>
 </html>
