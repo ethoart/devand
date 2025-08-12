@@ -167,17 +167,15 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="relative h-screen overflow-hidden">
-            <canvas id="particle-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
-            <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-                 <div data-aos="fade-up">
-                     <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-wide">
-                        Tharmalingam Devanand
-                    </h1>
-                    <p class="mt-4 text-2xl md:text-3xl font-medium gradient-text">
-                        "Harnessing over three decades of executive leadership to drive innovative business transformation, turning challenges into opportunities."
-                    </p>
-                 </div>
+        <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1534723452862-4c874018d66d?auto=format&fit=crop&w=2070&q=80');">
+            <div class="absolute inset-0 bg-slate-950/70"></div>
+            <div class="relative z-10 text-center px-6" data-aos="fade-up">
+                 <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-wide">
+                    Tharmalingam Devanand
+                </h1>
+                <p class="mt-4 text-2xl md:text-3xl font-medium gradient-text">
+                    "Harnessing over three decades of executive leadership to drive innovative business transformation, turning challenges into opportunities."
+                </p>
             </div>
         </section>
 
@@ -422,85 +420,7 @@
             aurora.style.left = `${e.clientX}px`;
             aurora.style.top = `${e.clientY}px`;
         });
-
-        // Particle canvas animation
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
         
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1;
-                this.speedX = Math.random() * 2 - 1;
-                this.speedY = Math.random() * 2 - 1;
-                this.color = 'rgba(34, 211, 238, 0.7)';
-            }
-            update() {
-                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-                this.x += this.speedX;
-                this.y += this.speedY;
-            }
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            let numberOfParticles = (canvas.height * canvas.width) / 9000;
-            for (let i = 0; i < numberOfParticles; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            initParticles();
-        }
-        
-        function connectParticles() {
-            let opacityValue = 1;
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a; b < particles.length; b++) {
-                    let distance = Math.sqrt(
-                        (particles[a].x - particles[b].x) * (particles[a].x - particles[b].x) +
-                        (particles[a].y - particles[b].y) * (particles[a].y - particles[b].y)
-                    );
-                    if (distance < 100) {
-                        opacityValue = 1 - (distance / 100);
-                        ctx.strokeStyle = `rgba(34, 211, 238, ${opacityValue})`;
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-            }
-            connectParticles();
-            requestAnimationFrame(animate);
-        }
-        
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-        animate();
-
-
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
