@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tharmalingam Devanand | Business & IT Executive</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/svg" href="image/devafavicon.svg">
+    <!-- Using a placeholder for the favicon as the original path is local -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
@@ -65,8 +66,8 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -39px;
-            top: 5px;
+            left: -42px; 
+            top: 8px;
             width: 1rem;
             height: 1rem;
             border-radius: 50%;
@@ -97,20 +98,24 @@
              box-shadow: 0 0 25px rgba(56, 189, 248, 0.5), 0 0 10px rgba(56, 189, 248, 0.3);
         }
 
-        /* Aurora cursor effect */
+        @media (hover: hover) and (pointer: fine) {
+            .aurora {
+                position: fixed;
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, rgba(34, 211, 238, 0) 60%);
+                pointer-events: none;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+                transition: opacity 0.5s;
+                display: block;
+            }
+        }
         .aurora {
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, rgba(34, 211, 238, 0) 60%);
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            transition: opacity 0.5s;
+            display: none;
         }
 
-        /* Modal styling */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -140,56 +145,58 @@
     <!-- Header -->
     <header class="bg-slate-950/70 backdrop-blur-md sticky top-0 z-50 border-b border-sky-500/10">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-white tracking-wider">T. DEVANAND</a>
+            <a href="#home" class="text-xl font-bold text-white tracking-wider">T. DEVANAND</a>
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#about" class="text-slate-300 hover:text-sky-400 transition">About</a>
                 <a href="#expertise" class="text-slate-300 hover:text-sky-400 transition">Expertise</a>
                 <a href="#testimonials" class="text-slate-300 hover:text-sky-400 transition">Commendation</a>
+                <a href="#experience" class="text-slate-300 hover:text-sky-400 transition">Experience</a>
                 <a href="#blog" class="text-slate-300 hover:text-sky-400 transition">Blog</a>
                 <a href="#gallery" class="text-slate-300 hover:text-sky-400 transition">Gallery</a>
-                <a href="#experience" class="text-slate-300 hover:text-sky-400 transition">Experience</a>
                 <a href="#contact" class="bg-sky-500 hover:bg-sky-400 text-white font-semibold px-4 py-2 rounded-lg transition glow-button">Contact</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-slate-200">
-                <i data-lucide="menu"></i>
+            <button id="mobile-menu-button" class="md:hidden text-slate-200 focus:outline-none">
+                <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-slate-950/95">
-             <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">About</a>
-             <a href="#expertise" class="block py-2 text-slate-300 hover:text-sky-400">Expertise</a>
-             <a href="#testimonials" class="block py-2 text-slate-300 hover:text-sky-400">Commendation</a>
-             <a href="#blog" class="block py-2 text-slate-300 hover:text-sky-400">Blog</a>
-             <a href="#gallery" class="block py-2 text-slate-300 hover:text-sky-400">Gallery</a>
-            <a href="#experience" class="block py-2 text-slate-300 hover:text-sky-400">Experience</a>
-            <a href="#contact" class="block mt-2 bg-sky-500 hover:bg-sky-400 text-white font-semibold px-4 py-2 rounded-lg text-center glow-button">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-6 pb-4 space-y-2 bg-slate-950/95">
+                 <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400 rounded-md">About</a>
+                 <a href="#expertise" class="block py-2 text-slate-300 hover:text-sky-400 rounded-md">Expertise</a>
+                 <a href="#testimonials" class="block py-2 text-slate-300 hover:text-sky-400 rounded-md">Commendation</a>
+                 <a href="#experience" class="block py-2 text-slate-300 hover:text-sky-400 rounded-md">Experience</a>
+                 <a href="#blog" class="block py-2 text-slate-300 hover:text-sky-400 rounded-md">Blog</a>
+                 <a href="#gallery" class="block py-2 text-slate-300 hover:text-sky-400 rounded-md">Gallery</a>
+                 <a href="#contact" class="block mt-2 bg-sky-500 hover:bg-sky-400 text-white font-semibold px-4 py-2 rounded-lg text-center glow-button">Contact</a>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('image/10.jpg');">
+        <section id="home" class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/020617/cbd5e1?text=Hero+Background');">
             <div class="absolute inset-0 bg-slate-950/70"></div>
             <div class="relative z-10 text-center px-6" data-aos="fade-up">
-                 <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-wide">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-wide">
                     Tharmalingam Devanand
                 </h1>
-                <p class="mt-4 text-2xl md:text-3xl font-medium gradient-text">
+                <p class="mt-4 text-lg sm:text-xl md:text-2xl font-medium gradient-text max-w-4xl mx-auto">
                     "Harnessing over three decades of executive leadership to drive innovative business transformation, turning challenges into opportunities."
                 </p>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-20 md:py-28">
+        <section id="about" class="py-16 sm:py-20 md:py-28">
              <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">About Me</h2>
-                <div class="mt-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                <div class="mt-12 md:mt-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
                     <div class="md:col-span-1" data-aos="fade-right">
-                         <img src="image/1.jpg" alt="Tharmalingam Devanand" class="rounded-2xl shadow-2xl shadow-sky-500/10 w-full h-auto">
+                         <img src="https://placehold.co/600x700/0f172a/9ca3af?text=T.D." alt="Tharmalingam Devanand" class="rounded-2xl shadow-2xl shadow-sky-500/10 w-full h-auto">
                     </div>
                     <div class="md:col-span-2" data-aos="fade-left">
-                        <p class="text-lg md:text-xl text-slate-300 leading-relaxed">
+                        <p class="text-base sm:text-lg text-slate-300 leading-relaxed">
                             With over three decades of diverse experience, I excel as an innovative entrepreneur and seasoned leader in business and transformation. I have a proven track record of building and scaling multimillion-dollar enterprises from inception, consistently demonstrating the ability to drive significant growth and profitability. As a player-coach, I empower cross-functional teams to achieve outstanding results by fostering a collaborative environment and providing strategic guidance. My expertise spans various critical areas, including comprehensive business transformation and management, sophisticated data strategy and monetization techniques, cutting-edge fintech applications in payments and solutions, and robust corporate strategy development. This comprehensive background allows me to adeptly identify challenges and transform them into opportunities for sustainable growth through a resilient, "never say die" approach.
                         </p>
                     </div>
@@ -198,39 +205,35 @@
         </section>
 
         <!-- Expertise Section -->
-        <section id="expertise" class="py-20 md:py-28 bg-slate-950/50">
+        <section id="expertise" class="py-16 sm:py-20 md:py-28 bg-slate-950/50">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Expertise</h2>
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Banking & Fintech -->
-                    <div class="glass-card p-8 cursor-pointer" data-aos="fade-up" onclick="openModal('fintech')">
-                        <div class="flex items-center gap-4 mb-4">
-                            <i data-lucide="banknote" class="w-12 h-12 text-sky-400"></i>
-                            <h3 class="text-2xl font-bold gradient-text">Banking, Fintech, and Payment Solutions</h3>
+                    <div class="glass-card p-6 md:p-8 cursor-pointer" data-aos="fade-up" onclick="openModal('expertise', 'fintech')">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+                            <i data-lucide="banknote" class="w-10 h-10 md:w-12 md:h-12 text-sky-400 flex-shrink-0"></i>
+                            <h3 class="text-xl md:text-2xl font-bold gradient-text">Banking, Fintech, and Payment Solutions</h3>
                         </div>
                         <p class="text-slate-300">Tailored advisory services to navigate digital financial ecosystems, innovate, and achieve sustainable growth.</p>
                     </div>
-                    <!-- Data Strategy -->
-                    <div class="glass-card p-8 cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="openModal('data')">
-                        <div class="flex items-center gap-4 mb-4">
-                            <i data-lucide="database-zap" class="w-12 h-12 text-sky-400"></i>
-                            <h3 class="text-2xl font-bold gradient-text">Data Strategy & Monetization</h3>
+                    <div class="glass-card p-6 md:p-8 cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="openModal('expertise', 'data')">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+                            <i data-lucide="database-zap" class="w-10 h-10 md:w-12 md:h-12 text-sky-400 flex-shrink-0"></i>
+                            <h3 class="text-xl md:text-2xl font-bold gradient-text">Data Strategy & Monetization</h3>
                         </div>
                         <p class="text-slate-300">Transforming data into a strategic asset for competitive advantage and new revenue streams.</p>
                     </div>
-                    <!-- Business Transformation -->
-                    <div class="glass-card p-8 cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="openModal('transformation')">
-                        <div class="flex items-center gap-4 mb-4">
-                            <i data-lucide="replace" class="w-12 h-12 text-sky-400"></i>
-                            <h3 class="text-2xl font-bold gradient-text">Business and Digital Transformation</h3>
+                    <div class="glass-card p-6 md:p-8 cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="openModal('expertise', 'transformation')">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+                            <i data-lucide="replace" class="w-10 h-10 md:w-12 md:h-12 text-sky-400 flex-shrink-0"></i>
+                            <h3 class="text-xl md:text-2xl font-bold gradient-text">Business and Digital Transformation</h3>
                         </div>
                         <p class="text-slate-300">Integrating technology with strategic insights to foster agility, innovation, and resilience.</p>
                     </div>
-                    <!-- Motivational Speeches -->
-                    <div class="glass-card p-8 cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="openModal('motivation')">
-                        <div class="flex items-center gap-4 mb-4">
-                            <i data-lucide="zap" class="w-12 h-12 text-sky-400"></i>
-                            <h3 class="text-2xl font-bold gradient-text">Motivational Speeches</h3>
+                    <div class="glass-card p-6 md:p-8 cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="openModal('expertise', 'motivation')">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+                            <i data-lucide="zap" class="w-10 h-10 md:w-12 md:h-12 text-sky-400 flex-shrink-0"></i>
+                            <h3 class="text-xl md:text-2xl font-bold gradient-text">Motivational Speeches</h3>
                         </div>
                         <p class="text-slate-300">Igniting passion and fostering resilience to drive actionable change with a "never say die" mindset.</p>
                     </div>
@@ -239,15 +242,15 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 md:py-28">
+        <section id="testimonials" class="py-16 sm:py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Commendations</h2>
-                <div class="mt-16 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="mt-12 md:mt-16 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="glass-card p-8" data-aos="fade-up">
                         <i data-lucide="quote" class="w-10 h-10 text-sky-700"></i>
                         <p class="mt-4 text-slate-300 italic">"Devanand's strategic insight was instrumental in transforming our data infrastructure. His leadership and 'never say die' attitude turned a complex challenge into a massive success for our company."</p>
                         <div class="flex items-center mt-6">
-                            <img src="https://placehold.co/50x50/0f172a/9ca3af?text=A" class="rounded-full" alt="Testimonial author">
+                            <img src="https://placehold.co/50x50/0f172a/9ca3af?text=JD" class="rounded-full" alt="Testimonial author">
                             <div class="ml-4">
                                 <p class="font-bold text-white">Jane Doe</p>
                                 <p class="text-sm text-slate-400">CEO, Tech Innovators Inc.</p>
@@ -258,7 +261,7 @@
                         <i data-lucide="quote" class="w-10 h-10 text-sky-700"></i>
                         <p class="mt-4 text-slate-300 italic">"Working with Devanand on our go-to-market strategy was a game-changer. He doubled our revenue in a single year and established a powerful partner ecosystem for us in a new market."</p>
                         <div class="flex items-center mt-6">
-                            <img src="https://placehold.co/50x50/0f172a/9ca3af?text=B" class="rounded-full" alt="Testimonial author">
+                            <img src="https://placehold.co/50x50/0f172a/9ca3af?text=JS" class="rounded-full" alt="Testimonial author">
                             <div class="ml-4">
                                 <p class="font-bold text-white">John Smith</p>
                                 <p class="text-sm text-slate-400">Managing Director, Global Solutions</p>
@@ -269,40 +272,52 @@
             </div>
         </section>
 
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 sm:py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Professional Experience</h2>
+                <div class="mt-12 md:mt-16 max-w-3xl mx-auto">
+                    <div id="timeline-container" class="relative border-l-2 border-sky-500/20 space-y-12">
+                        <!-- Experience items will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Image Banner 1 -->
-        <section class="h-80 bg-cover bg-center bg-fixed" style="background-image: url('image/10.jpg');" data-aos="fade">
-            <div class="h-full w-full bg-slate-950/60 flex items-center justify-center">
-                <h3 class="text-4xl font-bold text-white text-center" data-aos="fade-up">Innovate. Transform. Succeed.</h3>
+        <section class="h-80 bg-cover bg-center bg-scroll md:bg-fixed" style="background-image: url('https://placehold.co/1920x1080/020617/cbd5e1?text=Innovate');" data-aos="fade">
+            <div class="h-full w-full bg-slate-950/60 flex items-center justify-center px-4">
+                <h3 class="text-3xl md:text-4xl font-bold text-white text-center" data-aos="fade-up">Innovate. Transform. Succeed.</h3>
             </div>
         </section>
         
         <!-- Blog Section -->
-        <section id="blog" class="py-20 md:py-28">
+        <section id="blog" class="py-16 sm:py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Latest Insights</h2>
-                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <a href="blog1.html" class="blog-item glass-card p-0 block" data-aos="fade-up">
-                        <img src="image/22.png" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <a href="#" class="blog-item glass-card p-0 block" data-aos="fade-up">
+                        <img src="https://placehold.co/400x250/1e293b/9ca3af?text=Fintech" class="w-full h-48 object-cover rounded-t-xl">
                         <div class="p-6">
                             <p class="text-sm text-sky-400 font-semibold">FINTECH</p>
                             <h3 class="mt-2 text-xl font-bold text-white">The Future of Digital Payments</h3>
                              <p class="mt-2 text-slate-400">A look into how new technologies are shaping the financial landscape...</p>
                         </div>
                     </a>
-                     <a href="blog2.html" class="blog-item glass-card p-0 block" data-aos="fade-up">
-                        <img src="image/23.png" class="w-full h-48 object-cover rounded-t-xl">
+                     <a href="#" class="blog-item glass-card p-0 block" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://placehold.co/400x250/1e293b/9ca3af?text=Data" class="w-full h-48 object-cover rounded-t-xl">
                         <div class="p-6">
-                            <p class="text-sm text-sky-400 font-semibold">Data as a Strategic Asset</p>
+                            <p class="text-sm text-sky-400 font-semibold">DATA STRATEGY</p>
                             <h3 class="mt-2 text-xl font-bold text-white">The New Frontier of Monetization</h3>
-                             <p class="mt-2 text-slate-400">A look into how new technologies are shaping the financial landscape...</p>
+                             <p class="mt-2 text-slate-400">Exploring how data is becoming the most valuable asset for modern businesses...</p>
                         </div>
                     </a>
-                     <a href="blog3.html" class="blog-item glass-card p-0 block" data-aos="fade-up">
-                        <img src="image/25.jpg" class="w-full h-48 object-cover rounded-t-xl">
+                     <a href="#" class="blog-item glass-card p-0 block" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/400x250/1e293b/9ca3af?text=Transformation" class="w-full h-48 object-cover rounded-t-xl">
                         <div class="p-6">
-                            <p class="text-sm text-sky-400 font-semibold">Business Transformation Strategy and Planning</p>
-                            <h3 class="mt-2 text-xl font-bold text-white">A Guide to Business and Digital Transformation</h3>
-                             <p class="mt-2 text-slate-400">A look into how new technologies are shaping the financial landscape...</p>
+                            <p class="text-sm text-sky-400 font-semibold">BUSINESS TRANSFORMATION</p>
+                            <h3 class="mt-2 text-xl font-bold text-white">A Guide to Digital Transformation</h3>
+                             <p class="mt-2 text-slate-400">Key strategies for successfully navigating the complexities of digital change...</p>
                         </div>
                     </a>
                 </div>
@@ -310,83 +325,47 @@
         </section>
         
         <!-- Gallery Section -->
-        <section id="gallery" class="bg-slate-950/50 py-20 md:py-28">
+        <section id="gallery" class="bg-slate-950/50 py-16 sm:py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Gallery</h2>
-                 <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                    <a href="#" class="gallery-item glass-card p-0 block" data-aos="fade-up">
-                        <img src="image/2.jpg" class="w-full h-full object-cover">
+                 <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="#" class="gallery-item group block" data-aos="fade-up">
+                        <img src="https://placehold.co/400x400/1e293b/9ca3af?text=Event+1" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
                     </a>
-                     <a href="#" class="gallery-item glass-card p-0 block" data-aos="fade-up" data-aos-delay="100">
-                        <img src="image/7.jpg" class="w-full h-full object-cover">
+                     <a href="#" class="gallery-item group block" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://placehold.co/400x400/1e293b/9ca3af?text=Speaking" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
                     </a>
-                    <a href="#" class="gallery-item glass-card p-0 block" data-aos="fade-up" data-aos-delay="200">
-                        <img src="image/12.jpg" class="w-full h-full object-cover">
+                    <a href="#" class="gallery-item group block" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/400x400/1e293b/9ca3af?text=Workshop" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
                     </a>
-                    <a href="#" class="gallery-item glass-card p-0 block" data-aos="fade-up" data-aos-delay="300">
-                        <img src="image/14.jpg" class="w-full h-full object-cover">
+                    <a href="#" class="gallery-item group block" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://placehold.co/400x400/1e293b/9ca3af?text=Team" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
                     </a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 md:py-28">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-white" data-aos="fade-up">Professional Experience</h2>
-                <div class="mt-16 max-w-3xl mx-auto">
-                    <div class="relative border-l-2 border-sky-500/20 space-y-12">
-                         <div class="pl-10 relative" data-aos="fade-up">
-                            <div class="glass-card p-6 relative">
-                               <div class="timeline-item"></div>
-                                <p class="text-sky-400 font-semibold">October 2023 – Present</p>
-                                <h3 class="text-xl font-bold text-white mt-1">Regional Director - APAC</h3>
-                                <p class="text-md text-slate-300">ATDXT Dubai</p>
-                            </div>
-                        </div>
-                        <div class="pl-10 relative" data-aos="fade-up">
-                            <div class="glass-card p-6 relative">
-                                <div class="timeline-item"></div>
-                                <p class="text-sky-400 font-semibold">August 2014 – September 2023</p>
-                                <h3 class="text-xl font-bold text-white mt-1">Sales Director – Emerging Markets</h3>
-                                <p class="text-md text-slate-300">Whiteklay Pte, Singapore</p>
-                            </div>
-                        </div>
-                         <div class="pl-10 relative" data-aos="fade-up">
-                             <div class="glass-card p-6 relative">
-                                <div class="timeline-item"></div>
-                                <p class="text-sky-400 font-semibold">September 2012 – July 2014</p>
-                                <h3 class="text-xl font-bold text-white mt-1">Location Head – Sri Lanka & Maldives</h3>
-                                <p class="text-md text-slate-300">Ingram Micro</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bg-slate-950/50 py-20 md:py-28">
+        <section id="contact" class="bg-slate-950/50 py-16 sm:py-20 md:py-28">
             <div class="container mx-auto px-6 text-center" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Get In Touch</h2>
                 <p class="mt-4 max-w-xl mx-auto text-slate-300">
                     I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                 </p>
                 <div class="mt-8">
-                    <a href="mailto:devat3105@gmail.com" class="inline-block bg-sky-500 hover:bg-sky-400 text-white font-bold py-4 px-8 rounded-lg transition duration-300 text-lg glow-button">
+                    <a href="mailto:info@devanand.co" class="inline-block bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg glow-button">
                         info@devanand.co
                     </a>
                 </div>
-                <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-6 text-slate-300">
-                    <div class="flex items-center gap-2">
+                <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-slate-300">
+                    <a href="tel:+94714307858" class="flex items-center gap-2 hover:text-sky-400 transition">
                         <i data-lucide="phone"></i>
                         <span>+94 714307858</span>
-                    </div>
-                    <div class="flex items-center gap-2">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-sky-400 transition">
                          <i data-lucide="linkedin"></i>
-                         <a href="#" class="hover:text-sky-400">LinkedIn Profile</a>
-                    </div>
+                         <span>LinkedIn Profile</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -394,13 +373,13 @@
     </main>
     
     <!-- Modal -->
-    <div id="expertise-modal" class="modal-overlay" onclick="closeModal()">
+    <div id="modal" class="modal-overlay" onclick="closeModal()">
         <div class="modal-content glass-card p-8 md:p-12" onclick="event.stopPropagation()">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition z-10">
                 <i data-lucide="x" class="w-8 h-8"></i>
             </button>
-            <h2 id="modal-title" class="text-3xl font-bold gradient-text mb-6"></h2>
-            <div id="modal-body" class="text-slate-300 space-y-4"></div>
+            <h2 id="modal-title" class="text-2xl md:text-3xl font-bold gradient-text mb-6"></h2>
+            <div id="modal-body" class="text-slate-300 space-y-4 text-base"></div>
         </div>
     </div>
 
@@ -415,26 +394,31 @@
     <script>
         lucide.createIcons();
 
-        // Aurora cursor effect
-        const aurora = document.querySelector('.aurora');
-        document.addEventListener('mousemove', (e) => {
-            aurora.style.left = `${e.clientX}px`;
-            aurora.style.top = `${e.clientY}px`;
-        });
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            const aurora = document.querySelector('.aurora');
+            document.addEventListener('mousemove', (e) => {
+                aurora.style.left = `${e.clientX}px`;
+                aurora.style.top = `${e.clientY}px`;
+            });
+        }
         
-        // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('i');
+
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+            lucide.createIcons();
         });
         
-        document.querySelectorAll('#mobile-menu a, nav a').forEach(link => {
+        document.querySelectorAll('#mobile-menu a, nav a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 if(link.hash) {
-                    const mobileMenu = document.getElementById('mobile-menu');
                     if (!mobileMenu.classList.contains('hidden')) {
                          mobileMenu.classList.add('hidden');
+                         menuIcon.setAttribute('data-lucide', 'menu');
+                         lucide.createIcons();
                     }
                 }
             });
@@ -448,90 +432,212 @@
             offset: 50,
         });
 
-        // Modal Functionality
-        const modal = document.getElementById('expertise-modal');
+        // --- MODAL AND DYNAMIC CONTENT ---
+
+        const modal = document.getElementById('modal');
         const modalTitle = document.getElementById('modal-title');
         const modalBody = document.getElementById('modal-body');
 
-        const expertiseData = {
-            fintech: {
-                title: 'Banking, Fintech, and Payment Solutions',
-                content: `
-                    <p class="mb-6 text-slate-300">As a specialized consultant in the banking, fintech, and payment solutions sector, I offer tailored advisory services designed to navigate the complexities of digital financial ecosystems. Drawing from over three decades of executive leadership, my consultations empower organizations to innovate, optimize operations, and achieve sustainable growth in a rapidly evolving landscape.</p>
-                    <h4 class="text-xl font-bold text-white mb-4">Key Expertise Areas:</h4>
-                    <ul class="space-y-4 text-slate-400">
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Strategic Advisory for Banking Transformation:</strong> Guiding banks in transitioning from traditional models to digital-first operations, including the integration of AI-driven customer experiences, cloud-based infrastructure, and regulatory compliance frameworks like PSD2 or open banking standards.</div></li>
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Fintech Innovation and Product Development:</strong> Assisting emerging fintech companies in ideation, prototyping, and scaling innovative products, from block chain-based lending platforms to robo-advisory services, with a focus on market fit and investor readiness.</div></li>
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Payment Solutions and Monetization Strategies:</strong> Consulting on the architecture of secure, scalable payment systems, including real-time payments, cross-border transactions, and contactless solutions using NFC or QR codes.</div></li>
-                    </ul>
-                `
+        const modalData = {
+            expertise: {
+                fintech: {
+                    title: 'Banking, Fintech, and Payment Solutions',
+                    content: `
+                        <p class="mb-6 text-slate-300">As a specialized consultant in the banking, fintech, and payment solutions sector, I offer tailored advisory services designed to navigate the complexities of digital financial ecosystems. Drawing from over three decades of executive leadership, my consultations empower organizations to innovate, optimize operations, and achieve sustainable growth in a rapidly evolving landscape.</p>
+                        <h4 class="text-xl font-bold text-white mb-4">Key Expertise Areas:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Strategic Advisory for Banking Transformation:</strong> Guiding banks in transitioning from traditional models to digital-first operations.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Fintech Innovation and Product Development:</strong> Assisting emerging fintech companies in ideation, prototyping, and scaling innovative products.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Payment Solutions and Monetization Strategies:</strong> Consulting on the architecture of secure, scalable payment systems.</div></li>
+                        </ul>`
+                },
+                data: {
+                    title: 'Data Strategy & Monetization',
+                    content: `
+                        <p class="mb-6 text-slate-300">As an experienced Business & IT Executive, I help multi-million dollar enterprises transform data into a strategic asset. My consultations enable organizations to use data for competitive advantage, from building strong frameworks to creating new revenue streams, all while ensuring compliance with regulations like GDPR and CCPA.</p>
+                        <h4 class="text-xl font-bold text-white mb-4">Key Expertise Areas:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Data Strategy Development and Alignment:</strong> Designing comprehensive data strategies that align with your business goals.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Advanced Analytics and Insights Generation:</strong> Guiding the deployment of AI-driven models for forecasting trends and analyzing customer behavior.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Data Monetization Strategies and Execution:</strong> Identifying and implementing data monetization approaches like Data-as-a-Service (DaaS).</div></li>
+                        </ul>`
+                },
+                transformation: {
+                    title: 'Business and Digital Transformation',
+                    content: `
+                        <p class="mb-6 text-slate-300">I offer specialized consultations in business and digital transformation. With over 30 years of experience scaling multimillion-dollar enterprises, my services help organizations navigate significant change by integrating technology with strategic business insights. I aim to foster agility, innovation, and resilience, turning disruption into a competitive advantage.</p>
+                        <h4 class="text-xl font-bold text-white mb-4">Key Expertise Areas:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Holistic Transformation Roadmapping:</strong> Creating custom strategies that assess current operations and identify transformation priorities.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Digital Transformation Implementation:</strong> Guiding the selection and deployment of digital tools like ERP, CRM, and IoT solutions.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Innovation and Growth Acceleration:</strong> Facilitating collaborative ecosystems to expand market reach and co-create value.</div></li>
+                        </ul>`
+                },
+                motivation: {
+                    title: 'Motivational Speeches',
+                    content: `
+                        <p class="mb-6 text-slate-300">I offer dynamic consultations and motivational speeches, drawing from over thirty years of experience in business and IT. My goal is to ignite passion, foster resilience, and drive actionable change, using real-world experiences to inspire a "never say die" mindset.</p>
+                        <h4 class="text-xl font-bold text-white mb-4">Core Services:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Customized Motivational Speech Development:</strong> Developing and presenting engaging keynotes on resilience, leadership, and high-performance teams.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Leadership and Team Inspiration Programs:</strong> Embedding motivational content into coaching for leaders to build a player-coach mentality.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Content Creation for Broader Reach:</strong> Adapting speeches into podcasts, videos, or social media clips for ongoing motivation.</div></li>
+                        </ul>`
+                }
             },
-            data: {
-                title: 'Data Strategy & Monetization',
-                content: `
-                    <p class="mb-6 text-slate-300">As an experienced Business & IT Executive, I help multi-million dollar enterprises transform data into a strategic asset. My consultations enable organizations to use data for competitive advantage, from building strong frameworks to creating new revenue streams, all while ensuring compliance with regulations like GDPR and CCPA.</p>
-                    <h4 class="text-xl font-bold text-white mb-4">Key Expertise Areas:</h4>
-                    <ul class="space-y-4 text-slate-400">
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Data Strategy Development and Alignment:</strong> I design comprehensive data strategies that align with your business goals. This involves assessing current data maturity, identifying gaps, and outlining phased plans to integrate data across silos for unified decision-making.</div></li>
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Advanced Analytics and Insights Generation:</strong> I guide the deployment of AI-driven models for forecasting trends, analyzing customer behavior, and optimizing operations.</div></li>
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Data Monetization Strategies and Execution:</strong> I identify and implement data monetization approaches such as Data-as-a-Service (DaaS), subscription-based insights, or data sharing partnerships.</div></li>
-                    </ul>
-                `
-            },
-            transformation: {
-                title: 'Business and Digital Transformation',
-                content: `
-                    <p class="mb-6 text-slate-300">I offer specialized consultations in business and digital transformation. With over 30 years of experience scaling multimillion-dollar enterprises, my services help organizations navigate significant change by integrating technology with strategic business insights. I aim to foster agility, innovation, and resilience, turning disruption into a competitive advantage.</p>
-                    <h4 class="text-xl font-bold text-white mb-4">Key Expertise Areas:</h4>
-                    <ul class="space-y-4 text-slate-400">
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Holistic Transformation Roadmapping:</strong> I create custom strategies that assess current operations, identify transformation priorities, and develop phased plans for organizational restructuring.</div></li>
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Digital Transformation Implementation:</strong> I guide the selection and deployment of digital tools like ERP, CRM, and IoT solutions, focusing on seamless integration to enhance processes.</div></li>
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Innovation and Growth Acceleration:</strong> I facilitate collaborative ecosystems, such as API economies or startup partnerships, to expand market reach and co-create value through open innovation.</div></li>
-                    </ul>
-                `
-            },
-            motivation: {
-                title: 'Motivational Speeches',
-                content: `
-                    <p class="mb-6 text-slate-300">I offer dynamic consultations and motivational speeches, drawing from over thirty years of experience in business and IT, leading transformative initiatives, and scaling multimillion-dollar businesses. My goal is to ignite passion, foster resilience, and drive actionable change, using real-world experiences to inspire a "never say die" mindset.</p>
-                    <h4 class="text-xl font-bold text-white mb-4">Core Services:</h4>
-                    <ul class="space-y-4 text-slate-400">
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Customized Motivational Speech Development and Delivery:</strong> I develop and present engaging keynotes on topics such as "Turning Obstacles into Opportunities," "The Power of Resilient Leadership in Digital Disruption," or "Building High-Performance Teams in Uncertain Times."</div></li>
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Leadership and Team Inspiration Programs:</strong> I embed motivational content into one-on-one or group coaching for leaders, focusing on building a player-coach mentality and enhancing emotional intelligence.</div></li>
-                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div><strong>Content Creation and Amplification for Broader Reach:</strong> I adapt speeches into podcasts, video series, or social media clips for ongoing motivation, leveraging platforms like LinkedIn or YouTube to expand reach.</div></li>
-                    </ul>
-                `
-            }
+            experience: [
+                {
+                    date: 'October 2023 – Present',
+                    title: 'Regional Director - APAC',
+                    company: 'ATDXT Dubai',
+                    details: `
+                        <h4 class="text-xl font-bold text-white mb-4">Key Achievements:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Spearheaded the establishment and expansion of the APAC region from ground zero.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Secured a landmark project with LOLC for a comprehensive Payments & Settlement platform, designed to exponentially increase revenue and double new customer acquisition.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Positioned ATDXT as a key player in the APAC market through innovative solutions and targeted business development.</div></li>
+                        </ul>`
+                },
+                {
+                    date: 'August 2014 – September 2023',
+                    title: 'Sales Director – Emerging Markets',
+                    company: 'Whiteklay Pte, Singapore',
+                    details: `
+                        <h4 class="text-xl font-bold text-white mb-4">Key Achievements:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Led sales initiatives across emerging markets, focusing on data-driven strategies.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Pioneered the introduction of data strategy and monetization practices in Sri Lanka, setting new industry benchmarks.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Forged a strategic SaaS partnership with a leading telecommunications company using an innovative business model.</div></li>
+                        </ul>`
+                },
+                {
+                    date: 'September 2012 – July 2014',
+                    title: 'Location Head – Sri Lanka & Maldives',
+                    company: 'Ingram Micro',
+                    details: `
+                        <h4 class="text-xl font-bold text-white mb-4">Key Responsibilities:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Oversaw operations and business development, ensuring alignment with corporate objectives.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Managed cross-functional teams to drive sales, distribution, and partner relationships, contributing to sustained business growth.</div></li>
+                        </ul>`
+                },
+                {
+                    date: 'September 2010 – September 2012',
+                    title: 'Regional Manager – Sri Lanka & Maldives',
+                    company: 'Avaya',
+                    details: `
+                        <h4 class="text-xl font-bold text-white mb-4">Key Achievements:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Directed regional operations, focusing on sales, customer engagement, and market expansion.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Achieved a doubling of business revenue within a single year while operating as the sole employee.</div></li>
+                        </ul>`
+                },
+                {
+                    date: 'January 2009 – September 2010',
+                    title: 'Private Consultant',
+                    company: 'Independent',
+                    details: `
+                        <h4 class="text-xl font-bold text-white mb-4">Key Activities:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Provided independent consulting in IT strategy, business development, and digital transformation to various clients.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Leveraged extensive industry knowledge to deliver tailored solutions and advisory support.</div></li>
+                        </ul>`
+                },
+                {
+                    date: 'May 2006 – December 2008',
+                    title: 'Business Manager – Sri Lanka & Maldives',
+                    company: 'EMC Inc.',
+                    details: `
+                        <h4 class="text-xl font-bold text-white mb-4">Key Achievements:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Built the business from zero to USD 5M in annual revenue.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Secured major contracts with key clients in telecommunications and government sectors.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Captured a 60% market share in storage and virtualization segments.</div></li>
+                        </ul>`
+                },
+                {
+                    date: 'March 2002 – May 2006',
+                    title: 'Business Development Manager – Sri Lanka & Maldives',
+                    company: 'Cisco Systems Inc.',
+                    details: `
+                        <h4 class="text-xl font-bold text-white mb-4">Key Achievements:</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Grew regional revenue from USD 500K to USD 15M (a 30-fold increase).</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Expanded the channel partner network from 2 to 15 active partners.</div></li>
+                            <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-sky-400 mr-3 mt-1 flex-shrink-0"></i><div>Introduced the Cisco Academy program to all universities in Sri Lanka.</div></li>
+                        </ul>`
+                },
+                {
+                    date: 'January 1999 – March 2002',
+                    title: 'Manager – SI Division',
+                    company: 'EAP Technologies (Pvt) Ltd.',
+                    details: `<p>Managed the Systems Integration (SI) division, overseeing project delivery, team coordination, and client relationships in IT solutions. Contributed to the company's growth by implementing efficient integration practices and driving project success.</p>`
+                },
+                {
+                    date: 'August 1997 – January 1999',
+                    title: 'Account Manager',
+                    company: 'Bartleet Electronics Ltd.',
+                    details: `<p>Handled key accounts in electronics and technology sectors, focusing on sales, customer service, and relationship management. Played a pivotal role in closing significant deals, including contributions to early telecommunications projects.</p>`
+                },
+                {
+                    date: 'September 1995 – July 1997',
+                    title: 'Assistant Sales Manager',
+                    company: 'Digitek (Pvt) Ltd.',
+                    details: `<p>Assisted in sales management, supporting team efforts in product promotion, client acquisition, and market analysis. Gained foundational experience in sales strategies and customer engagement within the technology industry.</p>`
+                },
+                {
+                    date: 'October 1992 – September 1995',
+                    title: 'Senior Workshop Engineer',
+                    company: 'Robo Tech (Pvt) Ltd.',
+                    details: `<p>Led technical workshop operations, including engineering, maintenance, and innovation in robotic and tech solutions. Developed hands-on expertise in engineering principles, laying the groundwork for future leadership in IT and business.</p>`
+                }
+            ]
         };
 
-        function openModal(expertiseKey) {
-            const data = expertiseData[expertiseKey];
+        function openModal(type, key) {
+            let data;
+            if (type === 'expertise') {
+                data = modalData.expertise[key];
+            } else if (type === 'experience') {
+                data = modalData.experience[key];
+            }
+
             if (data) {
                 modalTitle.textContent = data.title;
-                modalBody.innerHTML = data.content;
+                modalBody.innerHTML = data.details || data.content;
                 modal.style.display = 'flex';
-                lucide.createIcons(); // Re-initialize icons inside the modal
+                setTimeout(() => document.body.style.overflow = 'hidden', 200);
+                lucide.createIcons();
             }
         }
 
         function closeModal() {
             modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && modal.style.display === 'flex') {
+                closeModal();
+            }
+        });
+
+        // Dynamically build the timeline
+        const timelineContainer = document.getElementById('timeline-container');
+        modalData.experience.forEach((job, index) => {
+            const timelineElement = `
+                <div class="pl-10 relative" data-aos="fade-up" data-aos-delay="${index * 50}">
+                    <div class="glass-card p-6 relative cursor-pointer" onclick="openModal('experience', ${index})">
+                        <div class="timeline-item"></div>
+                        <p class="text-sky-400 font-semibold">${job.date}</p>
+                        <h3 class="text-xl font-bold text-white mt-1">${job.title}</h3>
+                        <p class="text-md text-slate-300">${job.company}</p>
+                    </div>
+                </div>
+            `;
+            timelineContainer.innerHTML += timelineElement;
+        });
 
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
